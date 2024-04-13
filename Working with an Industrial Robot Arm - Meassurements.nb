@@ -1,0 +1,981 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     34352,        973]
+NotebookOptionsPosition[     31464,        929]
+NotebookOutlinePosition[     31871,        945]
+CellTagsIndexPosition[     31828,        942]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"OA", "=", "120"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AB", "=", "250"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"BC", "=", "250"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Cgrip", "=", "80"}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Theta]1", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"ArcSin", "[", 
+      RowBox[{"desiredX", "*", "desiredDistXYi"}], "]"}], "/", "Degree"}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"desiredDistXY", "=", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{
+     RowBox[{"desiredX", "^", "2"}], "+", 
+     RowBox[{"desiredY", "^", "2"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"l1", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"desiredDistXY", "-", "OA"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"l2", "=", 
+   RowBox[{
+    RowBox[{"Abs", "[", "desiredZ", "]"}], "-", "Cgrip"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AC", "=", 
+    RowBox[{"N", "[", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"l1", "^", "2"}], "+", 
+       RowBox[{"l2", "^", "2"}]}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"\[Alpha]12", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"ArcCos", "[", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"BC", "^", "2"}], "-", 
+        RowBox[{"AB", "^", "2"}], "-", 
+        RowBox[{"AC", "^", "2"}]}], 
+       RowBox[{
+        RowBox[{"-", "2"}], "*", "AB", "*", "AC"}]], "]"}], "/", "Degree"}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"\[Alpha]2", "=", 
+   RowBox[{"\[Gamma]1", "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"ArcTanh", "[", 
+       RowBox[{"l2", "/", "l1"}], "]"}], "/", "Degree"}], "]"}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"\[Alpha]1", "=", 
+   RowBox[{"\[Alpha]12", "-", "\[Alpha]2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Theta]2", "=", 
+    RowBox[{"90", "-", "\[Alpha]1"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"\[Beta]", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"ArcCos", "[", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"AC", "^", "2"}], "-", 
+        RowBox[{"AB", "^", "2"}], "-", 
+        RowBox[{"BC", "^", "2"}]}], 
+       RowBox[{
+        RowBox[{"-", "2"}], "*", "AB", "*", "AC"}]], "]"}], "/", "Degree"}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Theta]3", "=", 
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{"180", "-", "\[Beta]"}], ")"}]}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Gamma]2", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"ArcCos", "[", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"AB", "^", "2"}], "-", 
+        RowBox[{"AC", "^", "2"}], "-", 
+        RowBox[{"BC", "^", "2"}]}], 
+       RowBox[{
+        RowBox[{"-", "2"}], "*", "AB", "*", "AC"}]], "]"}], "/", "Degree"}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Theta]4", "=", 
+    RowBox[{"90", "-", 
+     RowBox[{"(", 
+      RowBox[{"\[Gamma]1", "+", "\[Gamma]2"}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<OA=\>\"", ",", "OA"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<AB=\>\"", ",", "AB"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<BC=\>\"", ",", "BC"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Cgrip=\>\"", ",", "Cgrip"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<l1=\>\"", ",", "l1"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<l2=\>\"", ",", "l2"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<AC=\>\"", ",", "AC"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Alpha]1 + \[Alpha]2 =\>\"", ",", "\[Alpha]12"}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Alpha]1=\>\"", ",", "\[Alpha]1"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Alpha]2=\[Gamma]1=\>\"", ",", "\[Alpha]2"}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Beta]=\>\"", ",", "\[Beta]"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Gamma]2=\>\"", ",", "\[Gamma]2"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Theta]1=\>\"", ",", "\[Theta]1"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Theta]2=\>\"", ",", "\[Theta]2"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Theta]3=\>\"", ",", "\[Theta]3"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<\[Theta]4=\>\"", ",", "\[Theta]4"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<expected \[Theta]1=\>\"", ",", 
+    RowBox[{"-", "42"}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<expected \[Theta]2=\>\"", ",", "57"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<expected \[Theta]3=\>\"", ",", 
+    RowBox[{"-", "85"}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<expected \[Theta]4=\>\"", ",", "36"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<desired X=\>\"", ",", "desiredX"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<desired Y=\>\"", ",", "desiredY"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<desired Z=\>\"", ",", "desiredZ"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<measured X=\>\"", ",", 
+    RowBox[{"-", "328"}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<measured Y=\>\"", ",", "354.5"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<measured Z=\>\"", ",", 
+    RowBox[{"-", "141"}]}], "]"}], ";"}], "\n"}], "Input",
+ CellChangeTimes->{{3.92199715432926*^9, 3.92199715432926*^9}, 
+   3.9219973430306168`*^9, {3.9219973941002197`*^9, 3.9219976393769913`*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"b082d58b-f384-6b4a-ae8a-5f540c944866"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"OA=\"\>", "\[InvisibleSpace]", "120"}],
+  SequenceForm["OA=", 120],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.92199764832156*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"625c6afb-7b0c-284c-ab87-38da787b0e66"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"AB=\"\>", "\[InvisibleSpace]", "250"}],
+  SequenceForm["AB=", 250],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483245583`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"747fe890-2ac9-9a46-8292-a2ae431fe0a3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"BC=\"\>", "\[InvisibleSpace]", "250"}],
+  SequenceForm["BC=", 250],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483270817`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"8c368a11-7800-3b4d-8dd2-002e8b4fb408"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Cgrip=\"\>", "\[InvisibleSpace]", "80"}],
+  SequenceForm["Cgrip=", 80],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648328081*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"65e644b5-6370-db4c-86cd-ea037b388bd1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"l1=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "120.`"}], "+", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["desiredX", "2"], "+", 
+      SuperscriptBox["desiredY", "2"]}]]}]}],
+  SequenceForm[
+  "l1=", -120. + ($CellContext`desiredX^2 + $CellContext`desiredY^2)^
+    Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648330082*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"e60fff22-9d90-3340-8d9a-43a463c87c99"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"l2=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "80"}], "+", 
+    RowBox[{"Abs", "[", "desiredZ", "]"}]}]}],
+  SequenceForm["l2=", -80 + Abs[$CellContext`desiredZ]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648332081*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"28d64fb4-f2dd-6f49-ac73-c1672724198c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"AC=\"\>", "\[InvisibleSpace]", 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "120.`"}], "+", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["desiredX", "2"], "+", 
+          SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "80.`"}], "+", 
+        RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]]}],
+  SequenceForm[
+  "AC=", ((-120. + ($CellContext`desiredX^2 + $CellContext`desiredY^2)^
+       Rational[1, 2])^2 + (-80. + Abs[$CellContext`desiredZ])^2)^
+   Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648333082*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"55eb6aaa-c7a0-a84c-8150-83d568a09175"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Alpha]1 + \[Alpha]2 =\"\>", "\[InvisibleSpace]", 
+   RowBox[{"57.29577951308232`", " ", 
+    RowBox[{"ArcCos", "[", 
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"0.002`", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1.`"}], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "120.`"}], "+", 
+                SqrtBox[
+                 RowBox[{
+                  SuperscriptBox["desiredX", "2"], "+", 
+                  SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"]}], "-", 
+            RowBox[{"1.`", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "80.`"}], "+", 
+                RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]}], 
+           ")"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "120.`"}], "+", 
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["desiredX", "2"], "+", 
+                SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "80.`"}], "+", 
+              RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+         ")"}]}], ")"}]}], "]"}]}]}],
+  SequenceForm[
+  "\[Alpha]1 + \[Alpha]2 =", 57.29577951308232 
+   ArcCos[(-0.002) (-(-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 - 
+      1. (-80. + 
+        Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+         Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648337597*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"92454053-0167-4345-b19c-78d0faffa469"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Alpha]1=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcCos", "[", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"0.002`", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "1.`"}], " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "120.`"}], "+", 
+                 SqrtBox[
+                  RowBox[{
+                   SuperscriptBox["desiredX", "2"], "+", 
+                   SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"]}], "-", 
+             RowBox[{"1.`", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "80.`"}], "+", 
+                 RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]}], 
+            ")"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "120.`"}], "+", 
+               SqrtBox[
+                RowBox[{
+                 SuperscriptBox["desiredX", "2"], "+", 
+                 SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "80.`"}], "+", 
+               RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+          ")"}]}], ")"}]}], "]"}]}], "-", 
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcTanh", "[", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"-", "80.`"}], "+", 
+        RowBox[{"Abs", "[", "desiredZ", "]"}]}], 
+       RowBox[{
+        RowBox[{"-", "120.`"}], "+", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["desiredX", "2"], "+", 
+          SuperscriptBox["desiredY", "2"]}]]}]], "]"}]}]}]}],
+  SequenceForm[
+  "\[Alpha]1=", 
+   57.29577951308232 
+    ArcCos[(-0.002) (-(-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 - 
+       1. (-80. + 
+         Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+          Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]] - 57.29577951308232 
+   ArcTanh[(-120. + ($CellContext`desiredX^2 + $CellContext`desiredY^2)^
+        Rational[1, 2])^(-1) (-80. + Abs[$CellContext`desiredZ])]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483415966`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"3c4c648e-28cd-114c-9973-03ff78263333"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Alpha]2=\[Gamma]1=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"57.29577951308232`", " ", 
+    RowBox[{"ArcTanh", "[", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"-", "80.`"}], "+", 
+       RowBox[{"Abs", "[", "desiredZ", "]"}]}], 
+      RowBox[{
+       RowBox[{"-", "120.`"}], "+", 
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["desiredX", "2"], "+", 
+         SuperscriptBox["desiredY", "2"]}]]}]], "]"}]}]}],
+  SequenceForm[
+  "\[Alpha]2=\[Gamma]1=", 57.29577951308232 
+   ArcTanh[(-120. + ($CellContext`desiredX^2 + $CellContext`desiredY^2)^
+        Rational[1, 2])^(-1) (-80. + Abs[$CellContext`desiredZ])]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.92199764835462*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"b48597ff-132d-be49-bead-395241dcb020"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Beta]=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"57.29577951308232`", " ", 
+    RowBox[{"ArcCos", "[", 
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"0.002`", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "125000.`"}], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "120.`"}], "+", 
+               SqrtBox[
+                RowBox[{
+                 SuperscriptBox["desiredX", "2"], "+", 
+                 SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "80.`"}], "+", 
+               RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}], 
+           ")"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "120.`"}], "+", 
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["desiredX", "2"], "+", 
+                SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "80.`"}], "+", 
+              RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+         ")"}]}], ")"}]}], "]"}]}]}],
+  SequenceForm[
+  "\[Beta]=", 57.29577951308232 
+   ArcCos[(-0.002) (-125000. + (-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+        Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+         Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648357624*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"67a560d3-6ea3-c941-99d6-1d12755b569a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Gamma]2=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"57.29577951308232`", " ", 
+    RowBox[{"ArcCos", "[", 
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"0.002`", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1.`"}], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "120.`"}], "+", 
+                SqrtBox[
+                 RowBox[{
+                  SuperscriptBox["desiredX", "2"], "+", 
+                  SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"]}], "-", 
+            RowBox[{"1.`", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "80.`"}], "+", 
+                RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]}], 
+           ")"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "120.`"}], "+", 
+              SqrtBox[
+               RowBox[{
+                SuperscriptBox["desiredX", "2"], "+", 
+                SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "80.`"}], "+", 
+              RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+         ")"}]}], ")"}]}], "]"}]}]}],
+  SequenceForm[
+  "\[Gamma]2=", 57.29577951308232 
+   ArcCos[(-0.002) (-(-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 - 
+      1. (-80. + 
+        Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+         Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483606243`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"c66faadf-392e-6642-b75e-73b97799431d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Theta]1=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"57.29577951308232`", " ", 
+    RowBox[{"ArcSin", "[", 
+     RowBox[{"desiredDistXYi", " ", "desiredX"}], "]"}]}]}],
+  SequenceForm[
+  "\[Theta]1=", 57.29577951308232 
+   ArcSin[$CellContext`desiredDistXYi $CellContext`desiredX]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648362623*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"e57ebc43-742a-5b4d-9f8e-0d61ca8fd2d0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Theta]2=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"90", "-", 
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcCos", "[", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"0.002`", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "1.`"}], " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "120.`"}], "+", 
+                 SqrtBox[
+                  RowBox[{
+                   SuperscriptBox["desiredX", "2"], "+", 
+                   SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"]}], "-", 
+             RowBox[{"1.`", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "80.`"}], "+", 
+                 RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]}], 
+            ")"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "120.`"}], "+", 
+               SqrtBox[
+                RowBox[{
+                 SuperscriptBox["desiredX", "2"], "+", 
+                 SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "80.`"}], "+", 
+               RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+          ")"}]}], ")"}]}], "]"}]}], "+", 
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcTanh", "[", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"-", "80.`"}], "+", 
+        RowBox[{"Abs", "[", "desiredZ", "]"}]}], 
+       RowBox[{
+        RowBox[{"-", "120.`"}], "+", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["desiredX", "2"], "+", 
+          SuperscriptBox["desiredY", "2"]}]]}]], "]"}]}]}]}],
+  SequenceForm[
+  "\[Theta]2=", 90 - 57.29577951308232 
+   ArcCos[(-0.002) (-(-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 - 
+      1. (-80. + 
+        Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+         Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]] + 
+   57.29577951308232 
+    ArcTanh[(-120. + ($CellContext`desiredX^2 + $CellContext`desiredY^2)^
+         Rational[1, 2])^(-1) (-80. + Abs[$CellContext`desiredZ])]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483651333`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"0c63b53b-3a45-ac4b-801a-791caa228347"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Theta]3=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "180"}], "+", 
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcCos", "[", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"0.002`", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "125000.`"}], "+", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "120.`"}], "+", 
+                SqrtBox[
+                 RowBox[{
+                  SuperscriptBox["desiredX", "2"], "+", 
+                  SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "80.`"}], "+", 
+                RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}], 
+            ")"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "120.`"}], "+", 
+               SqrtBox[
+                RowBox[{
+                 SuperscriptBox["desiredX", "2"], "+", 
+                 SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "80.`"}], "+", 
+               RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+          ")"}]}], ")"}]}], "]"}]}]}]}],
+  SequenceForm[
+  "\[Theta]3=", -180 + 
+   57.29577951308232 
+    ArcCos[(-0.002) (-125000. + (-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+         Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+          Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.92199764837014*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"c2d9d250-4de6-9441-ac09-c29c9aa8df3d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[Theta]4=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"90", "-", 
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcCos", "[", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"0.002`", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "1.`"}], " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "120.`"}], "+", 
+                 SqrtBox[
+                  RowBox[{
+                   SuperscriptBox["desiredX", "2"], "+", 
+                   SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"]}], "-", 
+             RowBox[{"1.`", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "80.`"}], "+", 
+                 RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]}], 
+            ")"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "120.`"}], "+", 
+               SqrtBox[
+                RowBox[{
+                 SuperscriptBox["desiredX", "2"], "+", 
+                 SuperscriptBox["desiredY", "2"]}]]}], ")"}], "2"], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "80.`"}], "+", 
+               RowBox[{"Abs", "[", "desiredZ", "]"}]}], ")"}], "2"]}]], 
+          ")"}]}], ")"}]}], "]"}]}], "-", 
+    RowBox[{"57.29577951308232`", " ", 
+     RowBox[{"ArcTanh", "[", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"-", "80.`"}], "+", 
+        RowBox[{"Abs", "[", "desiredZ", "]"}]}], 
+       RowBox[{
+        RowBox[{"-", "120.`"}], "+", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["desiredX", "2"], "+", 
+          SuperscriptBox["desiredY", "2"]}]]}]], "]"}]}]}]}],
+  SequenceForm[
+  "\[Theta]4=", 90 - 57.29577951308232 
+   ArcCos[(-0.002) (-(-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 - 
+      1. (-80. + 
+        Abs[$CellContext`desiredZ])^2) ((-120. + ($CellContext`desiredX^2 + \
+$CellContext`desiredY^2)^Rational[1, 2])^2 + (-80. + 
+         Abs[$CellContext`desiredZ])^2)^Rational[-1, 2]] - 57.29577951308232 
+   ArcTanh[(-120. + ($CellContext`desiredX^2 + $CellContext`desiredY^2)^
+        Rational[1, 2])^(-1) (-80. + Abs[$CellContext`desiredZ])]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648374136*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"d4af8b8d-88fe-f449-ac23-28cc5d98bdf5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"expected \[Theta]1=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "42"}]}],
+  SequenceForm["expected \[Theta]1=", -42],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483756523`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"5a41578b-f985-204d-9ce2-886e9e413eea"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"expected \[Theta]2=\"\>", "\[InvisibleSpace]", "57"}],
+  SequenceForm["expected \[Theta]2=", 57],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483776493`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"b4a31c38-45c4-7f4c-bbdc-33f7acf9a3cc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"expected \[Theta]3=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "85"}]}],
+  SequenceForm["expected \[Theta]3=", -85],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648379652*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"26c6c2a0-9d4a-ab41-b266-579a29dc30fc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"expected \[Theta]4=\"\>", "\[InvisibleSpace]", "36"}],
+  SequenceForm["expected \[Theta]4=", 36],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483806553`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"c7804cd1-f24c-1349-9b24-96673d608474"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"desired X=\"\>", "\[InvisibleSpace]", "desiredX"}],
+  SequenceForm["desired X=", $CellContext`desiredX],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483826504`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"39bf0015-f71f-e148-8898-e826f3902758"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"desired Y=\"\>", "\[InvisibleSpace]", "desiredY"}],
+  SequenceForm["desired Y=", $CellContext`desiredY],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483851604`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"d9c4418b-6d9a-3a4a-8ee4-a60c38eb0b3f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"desired Z=\"\>", "\[InvisibleSpace]", "desiredZ"}],
+  SequenceForm["desired Z=", $CellContext`desiredZ],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648386162*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"980eab24-fd95-854d-8f5d-f939890b704a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"measured X=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "328"}]}],
+  SequenceForm["measured X=", -328],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483881607`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"f6e01101-0de8-ab47-afad-0805f670cbd3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"measured Y=\"\>", "\[InvisibleSpace]", "354.5`"}],
+  SequenceForm["measured Y=", 354.5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.9219976483901596`*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"de5c90bb-b849-2b44-af70-e9fe352da650"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"measured Z=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "141"}]}],
+  SequenceForm["measured Z=", -141],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.921997344315443*^9, 3.921997648391159*^9},
+ CellLabel->
+  "During evaluation of \
+In[44]:=",ExpressionUUID->"84a2b6c3-542c-d440-91c8-a5129546e292"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{574.8, 573.6},
+WindowMargins->{{-4.8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9b6a7bca-bed4-614f-a7b1-3c9fb5d607b9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 6165, 194, 998, "Input",ExpressionUUID->"b082d58b-f384-6b4a-ae8a-5f540c944866"],
+Cell[CellGroupData[{
+Cell[6770, 220, 314, 8, 22, "Print",ExpressionUUID->"625c6afb-7b0c-284c-ab87-38da787b0e66"],
+Cell[7087, 230, 317, 8, 22, "Print",ExpressionUUID->"747fe890-2ac9-9a46-8292-a2ae431fe0a3"],
+Cell[7407, 240, 317, 8, 22, "Print",ExpressionUUID->"8c368a11-7800-3b4d-8dd2-002e8b4fb408"],
+Cell[7727, 250, 319, 8, 22, "Print",ExpressionUUID->"65e644b5-6370-db4c-86cd-ea037b388bd1"],
+Cell[8049, 260, 550, 16, 25, "Print",ExpressionUUID->"e60fff22-9d90-3340-8d9a-43a463c87c99"],
+Cell[8602, 278, 426, 11, 22, "Print",ExpressionUUID->"28d64fb4-f2dd-6f49-ac73-c1672724198c"],
+Cell[9031, 291, 886, 26, 33, "Print",ExpressionUUID->"55eb6aaa-c7a0-a84c-8150-83d568a09175"],
+Cell[9920, 319, 2120, 58, 103, "Print",ExpressionUUID->"92454053-0167-4345-b19c-78d0faffa469"],
+Cell[12043, 379, 2715, 74, 126, "Print",ExpressionUUID->"3c4c648e-28cd-114c-9973-03ff78263333"],
+Cell[14761, 455, 875, 23, 43, "Print",ExpressionUUID->"b48597ff-132d-be49-bead-395241dcb020"],
+Cell[15639, 480, 2023, 55, 103, "Print",ExpressionUUID->"67a560d3-6ea3-c941-99d6-1d12755b569a"],
+Cell[17665, 537, 2096, 58, 85, "Print",ExpressionUUID->"c66faadf-392e-6642-b75e-73b97799431d"],
+Cell[19764, 597, 528, 13, 22, "Print",ExpressionUUID->"e57ebc43-742a-5b4d-9f8e-0d61ca8fd2d0"],
+Cell[20295, 612, 2729, 74, 144, "Print",ExpressionUUID->"0c63b53b-3a45-ac4b-801a-791caa228347"],
+Cell[23027, 688, 2127, 58, 103, "Print",ExpressionUUID->"c2d9d250-4de6-9441-ac09-c29c9aa8df3d"],
+Cell[25157, 748, 2721, 73, 144, "Print",ExpressionUUID->"d4af8b8d-88fe-f449-ac23-28cc5d98bdf5"],
+Cell[27881, 823, 367, 9, 22, "Print",ExpressionUUID->"5a41578b-f985-204d-9ce2-886e9e413eea"],
+Cell[28251, 834, 347, 8, 22, "Print",ExpressionUUID->"b4a31c38-45c4-7f4c-bbdc-33f7acf9a3cc"],
+Cell[28601, 844, 365, 9, 22, "Print",ExpressionUUID->"26c6c2a0-9d4a-ab41-b266-579a29dc30fc"],
+Cell[28969, 855, 347, 8, 22, "Print",ExpressionUUID->"c7804cd1-f24c-1349-9b24-96673d608474"],
+Cell[29319, 865, 354, 8, 22, "Print",ExpressionUUID->"39bf0015-f71f-e148-8898-e826f3902758"],
+Cell[29676, 875, 354, 8, 22, "Print",ExpressionUUID->"d9c4418b-6d9a-3a4a-8ee4-a60c38eb0b3f"],
+Cell[30033, 885, 352, 8, 22, "Print",ExpressionUUID->"980eab24-fd95-854d-8f5d-f939890b704a"],
+Cell[30388, 895, 353, 9, 22, "Print",ExpressionUUID->"f6e01101-0de8-ab47-afad-0805f670cbd3"],
+Cell[30744, 906, 338, 8, 22, "Print",ExpressionUUID->"de5c90bb-b849-2b44-af70-e9fe352da650"],
+Cell[31085, 916, 351, 9, 22, "Print",ExpressionUUID->"84a2b6c3-542c-d440-91c8-a5129546e292"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
